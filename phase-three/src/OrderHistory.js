@@ -1,6 +1,6 @@
 import React from "react";
 
-function OrderHistory() {
+function OrderHistory({order}) {
     return (
         <div>
             <table>
@@ -12,15 +12,13 @@ function OrderHistory() {
                     <th>Price</th>
                 </tr>
                 <tr>
-                    <td>Date</td>
-                    <td>Name</td>
-                    <td>Gift</td>
-                    <td>Category</td>
-                    <td>Price</td>
+                    <td>{order.user_id}</td>
+                    <td>{order.gift_id}</td>
+                    <td>{order.name}</td>
                 </tr>
             </table>
         </div>
-    )
+    ) 
 }
 
 export default OrderHistory;

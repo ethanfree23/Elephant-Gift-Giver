@@ -35,12 +35,20 @@ g10 = Giftee.create(name: "Jackie", address: "10 J St., Jungle, Hawaii", categor
 # c9 = Company.create(company_name: "Weapon Website", address: "", category1_name: "Weapons", category2_name: "Sex", category3_name: "Liquid Goods")
 # c10 = Company.create(company_name: "Liquid Goods Website", address: "", category1_name: "Liquid Goods", category2_name: "Sex", category3_name: "Drugs")
 
+puts "Creating orders..."
+o1 = Order.create(user_id: u1.id, gift_id: g1.id, name: g1.name)
+o2 = Order.create(user_id: u1.id, gift_id: g1.id, name: g1.name)
+o3 = Order.create(user_id: u1.id, gift_id: g1.id, name: g1.name)
+o4 = Order.create(user_id: u1.id, gift_id: g1.id, name: g1.name)
+o5 = Order.create(user_id: u1.id, gift_id: g1.id, name: g1.name)
+
+
 puts "Creating gifts..."
-Gift.create(item_name: "Peaches", category: "Fruits", user_id: u1.id , giftee_id: g1.id)
-Gift.create(item_name: "Pears", category: "Fruits", user_id: u1.id, giftee_id: g1.id)
-Gift.create(item_name: "Brittle Candy", category: "Candy", user_id: u2.id, giftee_id: g2.id)
-Gift.create(item_name: "Chocolates", category: "Candy", user_id: u3.id, giftee_id: g3.id)
-Gift.create(item_name: "Golf certificate", category: "Golfing", user_id: u4.id, giftee_id: g4.id)
+g1 = Gift.create(item_name: "Peaches", category: "Fruits", user_id: u1.id , giftee_id: g1.id)
+g2 = Gift.create(item_name: "Pears", category: "Fruits", user_id: u1.id, giftee_id: g1.id)
+g3 = Gift.create(item_name: "Brittle Candy", category: "Candy", user_id: u2.id, giftee_id: g2.id)
+g4 = Gift.create(item_name: "Chocolates", category: "Candy", user_id: u3.id, giftee_id: g3.id)
+g5 = Gift.create(item_name: "Golf certificate", category: "Golfing", user_id: u4.id, giftee_id: g4.id)
 # Gift.create(item_name: "Nissan", category: "Automobiles", user_id: 7, giftee_id: 1)
 # Gift.create(item_name: "Porsche", category: "Automobiles", user_id: 7, giftee_id: 1)
 # Gift.create(item_name: "Lambo", category: "Automobiles", user_id: 7, giftee_id: 1)
