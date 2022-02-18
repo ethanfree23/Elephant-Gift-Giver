@@ -8,10 +8,10 @@ import SignUp from "./SignUp";
 import LoginForm from "./LoginForm";
 import NewGifteeForm from "./NewGifteeForm";
 import GifteeCollection from "./GifteeCollection";
+import Footer from "./Footer";
 import HomePage from "./HomePage";
 import DashboardPage from "./DashboardPage";
 import OrderCollection from "./OrderCollection";
-import Footer from "./Footer";
 
 function App() {
   const [users, setUsers] = useState([]);

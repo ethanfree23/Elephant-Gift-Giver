@@ -42,24 +42,29 @@ function NewGifteeForm({ onAddGiftee }) {
                     <h3>Add New Giftee</h3>
                     <label>Name:   </label>
                     <input
+                        id="name"
+
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     /><br />
                     <label>City:   </label>
                     <input
+                        id="city"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                     /><br />
                     <label>State:   </label>
                     <input
+                        id="state"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                     /><br />
                     <label>Category 1:   </label>
                     <select
+                        id="category 1"
                         value={category1}
                         onChange={(e) => setCategory1(e.target.value)}
-                        >
+                    >
                         <option disabled>Categories</option>
                         <option>Antiques</option>
                         <option>Automobiles</option>
@@ -74,9 +79,10 @@ function NewGifteeForm({ onAddGiftee }) {
                     </select><br />
                     <label>Category 2:   </label>
                     <select
+                        id="category 2"
                         value={category2}
                         onChange={(e) => setCategory2(e.target.value)}
-                        >
+                    >
                         <option disabled>Categories</option>
                         <option>Antiques</option>
                         <option>Automobiles</option>
@@ -91,9 +97,10 @@ function NewGifteeForm({ onAddGiftee }) {
                     </select><br />
                     <label>Category 3:   </label>
                     <select
+                        id="category 3"
                         value={category3}
                         onChange={(e) => setCategory3(e.target.value)}
-                        >
+                    >
                         <option disabled>Categories</option>
                         <option>Antiques</option>
                         <option>Automobiles</option>
@@ -108,15 +115,18 @@ function NewGifteeForm({ onAddGiftee }) {
                     </select><br />
                     <label>Price:   </label>
                     <select
+                        id="price"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
-                        >
+                    >
                         <option disabled>Price Options</option>
                         <option>20-100</option>
                         <option>100-250</option>
                         <option>250-1000</option>
                     </select><br /> <br />
-                    <input type="submit" value="Submit" />
+                    <input
+                        type="submit"
+                        value="Submit" />
                 </form>
             </section> <br /> <br />
         </div>

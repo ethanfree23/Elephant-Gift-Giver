@@ -32,7 +32,7 @@ function SignUp({ onAddUser }) {
     return (
         <div>
             <div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h3>Sign Up</h3>
                     <label>Name:  </label>
                     <input />  <br />
