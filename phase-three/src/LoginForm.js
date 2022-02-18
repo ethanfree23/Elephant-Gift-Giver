@@ -44,8 +44,13 @@ function LoginForm({ users }) {
             <form
                 onSubmit={manageLogin}>
                 <label>
-                    <input onChange={manageUserName}></input>
-                    <input onChange={managePassword}></input>
+                    <input 
+                    placeholder="Name"
+                    onChange={manageUserName}></input>
+                    <input 
+                    placeholder="Password"
+                    type="password"
+                    onChange={managePassword}></input>
                     <button type="submit">Log In</button>
                 </label>
             </form>

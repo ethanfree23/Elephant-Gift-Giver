@@ -4,6 +4,7 @@ function SignUp({ onAddUser }) {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
 
@@ -12,6 +13,7 @@ function SignUp({ onAddUser }) {
         const newUser = {
             name,
             email,
+            password,
             city,
             state
         };
@@ -35,15 +37,31 @@ function SignUp({ onAddUser }) {
                 <form onSubmit={handleSubmit}>
                     <h3>Sign Up</h3>
                     <label>Name:  </label>
-                    <input />  <br />
+                    <input
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />  <br />
                     <label>Email:  </label>
-                    <input />  <br />
+                    <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />  <br />
                     <label>Password:  </label>
-                    <input />  <br />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />  <br />
                     <label>City:  </label>
-                    <input /> <br />
+                    <input
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                    /> <br />
                     <label>State:  </label>
-                    <input /> <br /> <br />
+                    <input
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                    /> <br /> <br />
                     <input type="submit" value="Submit" />
                 </form>
             </div>

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-function GifteeCard({ name, city, state, category1, category2, category3, price }) {
+function GifteeCard({ name, city, state, category1, category2, category3, price, handleRemoveGiftee, giftee, id }) {
+    const [remove, setRemove] = useState(false);
+
+    // function handleRemoveGiftee() {
+    //     setRemove((remove) => !remove)
+    // }
+
+    // console.log(giftee.id)
 
     return (
         <div>
@@ -12,7 +19,9 @@ function GifteeCard({ name, city, state, category1, category2, category3, price 
                 {category2} <br />
                 {category3} <br />
                 {price} <br />
-            </div> <br/>
+            </div> <br />
+            <button
+                onClick={() => handleRemoveGiftee(giftee)}>Remove</button>
         </div>
     )
 }

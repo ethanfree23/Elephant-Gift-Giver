@@ -11,4 +11,16 @@ class GifteesController < ApplicationController
         new_giftee = Giftee.create(params)
         # if this does not work, do Giftee.create(name: param[:name])
     end
+
+     get "/giftees/:id" do
+        Giftee.find(params[id]).to_json
+    end
+
+    delete "/giftees/:id" do
+        giftees = Giftee.find(params[id])
+        giftees.destroy
+        giftees.to_json
+    end
+
+
 end

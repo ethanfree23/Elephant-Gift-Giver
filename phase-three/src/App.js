@@ -18,7 +18,7 @@ function App() {
   const [giftees, setGiftees] = useState([]);
   const [orders, setOrders] = useState([]);
   // const [gifts, setGifts] = useState([]);
-  // const [removeRequest, setRemoveRequest] = useState(false);
+  const [removeRequest, setRemoveRequest] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:9292/users")
@@ -26,12 +26,21 @@ function App() {
       .then((data) => setUsers(data));
   }, []);
 
+  function handleAddUser(newUser) {
+    const newUserArray = [newUser, ...users];
+    setUsers(newUserArray)
+  }
+
   useEffect(() => {
     fetch("http://localhost:9292/giftees")
       .then((r) => r.json())
       .then((data) => setGiftees(data));
-  }, []);
-  // }, [removeRequest]);
+  }, [removeRequest]);
+
+  function handleAddGiftee(newGiftee) {
+    const newGifteeArray = [newGiftee, ...giftees];
+    setGiftees(newGifteeArray)
+  }
 
   useEffect(() => {
     fetch("http://localhost:9292/orders")
@@ -45,14 +54,15 @@ function App() {
   //     .then((data) => setGifts(data));
   // }, []);
 
-  function handleAddUser(newUser) {
-    const newUserArray = [newUser, ...users];
-    setUsers(newUserArray)
-  }
 
-  function handleAddGiftee(newGiftee) {
-    const newGifteeArray = [newGiftee, ...giftees];
-    setGiftees(newGifteeArray)
+
+  function handleRemoveGiftee(giftee) {
+    fetch(`http://localhost:9292/giftees/${giftee.id}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(setRemoveRequest(!removeRequest))
   }
 
   // return (
@@ -87,7 +97,7 @@ function App() {
           <>
             <Nav />
             <NewGifteeForm onAddGiftee={handleAddGiftee} />
-            <GifteeCollection giftees={giftees} />
+            <GifteeCollection giftees={giftees} handleRemoveGiftee={handleRemoveGiftee} />
             <Footer />
           </>
         } />
