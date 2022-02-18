@@ -1,7 +1,7 @@
 import React from "react";
 
 import Nav from "./Nav.js";
-import Form from "./Form";
+import NewGifteeForm from "./NewGifteeForm";
 import OrderCollection from "./OrderCollection";
 import GifteeCollection from "./GifteeCollection";
 import Footer from "./Footer.js";
@@ -12,7 +12,7 @@ function DashboardPage({ giftees, orders }) {
     return (
         <div>
             <Nav />
-            <Form />
+            <NewGifteeForm />
             <OrderCollection orders={orders} />
             <GifteeCollection giftees={giftees} />
             <Footer />

@@ -13,39 +13,41 @@
 ActiveRecord::Schema.define(version: 2022_02_17_031555) do
 
   create_table "companies", force: :cascade do |t|
-    t.string "company_name"
+    t.string "name"
     t.string "address"
-    t.string "category1_name"
-    t.string "category2_name"
-    t.string "category3_name"
+    t.string "category"
   end
 
   create_table "giftees", force: :cascade do |t|
     t.string "name"
-    t.string "address"
+    t.string "city"
+    t.string "state"
     t.string "category1"
     t.string "category2"
     t.string "category3"
-    t.integer "price_low"
-    t.integer "price_high"
+    t.string "price"
   end
 
   create_table "gifts", force: :cascade do |t|
-    t.string "item_name"
+    t.string "gift"
     t.string "category"
-    t.integer "giftee_id"
     t.integer "user_id"
+    t.integer "giftee_id"
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "giftee"
+    t.string "gift"
     t.integer "user_id"
     t.integer "gift_id"
-    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "address"
+    t.string "email"
+    t.string "password"
+    t.string "city"
+    t.string "state"
   end
 
 end

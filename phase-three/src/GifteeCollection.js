@@ -7,7 +7,16 @@ function GifteeCollection({ giftees }) {
         <div>
             {giftees.map((giftee) => {
                 return (
-                    <GifteeCard giftee={giftee} key={giftee.name} />
+                    <GifteeCard 
+                    key={giftee.id} 
+                    name={giftee.name}
+                    city={giftee.city}
+                    state={giftee.state}
+                    category1={giftee.category1}
+                    category2={giftee.category2}
+                    category3={giftee.category3}
+                    price={giftee.price}
+                    />
                 )
             })}
         </div>

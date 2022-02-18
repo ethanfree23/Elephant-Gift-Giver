@@ -1,16 +1,18 @@
 import React from "react";
 
-function GifteeCard({ giftee }) {
+function GifteeCard({ name, city, state, category1, category2, category3, price }) {
 
     return (
         <div>
-            {giftee.name} <br></br>
-            {giftee.address} <br></br>
-            {giftee.category1} <br></br>
-            {giftee.category2} <br></br>
-            {giftee.category3} <br></br>
-            {giftee.price_low} <br></br>
-            {giftee.price_high} <br></br>
+            <div>
+                {name} <br />
+                {city} <br />
+                {state} <br />
+                {category1} <br />
+                {category2} <br />
+                {category3} <br />
+                {price} <br />
+            </div> <br/>
         </div>
     )
 }

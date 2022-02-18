@@ -1,13 +1,19 @@
 import React from "react";
+import { Link, NavLink } from 'react-router-dom'
 
-function Nav(){
+function Nav() {
     return (
         <div>
-            <span>
-                <div>logo</div>
-                <div>home</div>
-                <div>dashboard</div>
-            </span>
+            <div>
+                <Link to="/home">
+                    <h1>Elephant Gift Giver</h1>
+                </Link>
+            </div>
+            <div>
+                <Link to="/dashboard">
+                    <h1>Dashboard</h1>
+                </Link>
+            </div>
         </div>
     )
 }

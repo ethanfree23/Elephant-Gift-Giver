@@ -1,24 +1,24 @@
 import React from "react";
 
-function OrderHistory({order}) {
+function OrderHistory({ name, user_id, gift_id }) {
     return (
         <div>
             <table>
-                <tr>
+                {/* <tr>
                     <th>Date</th>
                     <th>Name</th>
                     <th>Gift</th>
                     <th>Category</th>
                     <th>Price</th>
-                </tr>
+                </tr> */}
                 <tr>
-                    <td>{order.user_id}</td>
-                    <td>{order.gift_id}</td>
-                    <td>{order.name}</td>
+                    <td>{name}</td>
+                    <td>{user_id}</td>
+                    <td>{gift_id}</td>
                 </tr>
             </table>
         </div>
-    ) 
+    )
 }
 
 export default OrderHistory;

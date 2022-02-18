@@ -7,9 +7,15 @@ function OrderCollection({ orders }) {
         <div>
             {orders.map((order) => {
                 return (
-                    <OrderHistory order={order} key={order.name} />
+                    <OrderHistory 
+                    key={order.id}
+                    giftee={order.giftee} 
+                    gift={order.gift} 
+                    user_id={order.user_id} 
+                    gift_id={order.gift_id} 
+                    />
                 )
-            })}
+            })}<br/> <br/> <br/>
         </div>
     )
 }
