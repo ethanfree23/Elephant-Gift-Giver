@@ -9,9 +9,9 @@ import LoginForm from "./LoginForm";
 import NewGifteeForm from "./NewGifteeForm";
 import GifteeCollection from "./GifteeCollection";
 import Footer from "./Footer";
-import HomePage from "./HomePage";
-import DashboardPage from "./DashboardPage";
 import OrderCollection from "./OrderCollection";
+// import HomePage from "./HomePage";
+// import DashboardPage from "./DashboardPage";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -98,9 +98,11 @@ function App() {
             <Nav />
             <NewGifteeForm onAddGiftee={handleAddGiftee} />
             <GifteeCollection giftees={giftees} handleRemoveGiftee={handleRemoveGiftee} />
+            <OrderCollection orders={orders} />
             <Footer />
           </>
         } />
+
 
       </Routes>
     </div>
@@ -110,30 +112,3 @@ function App() {
 
 
 export default App;
-
-
-{/* <Route path="/create" element={
-  <div>
-    <Navigation />
-    <CreateHost handleAddHost={handleAddHost} />
-  </div>
-} /> */}
-
-
-
-    // <Switch>
-    //   <Route path="/home" component={() => {
-    //     return (
-    //       <>
-    //         <HomePage />
-    //       </>
-    //     )
-    //   }} />
-    //   <Route path="/dashboard" component={() => {
-    //     return (
-    //       <>
-    //         <DashboardPage />
-    //       </>
-    //     )
-    //   }} />
-    // </Switch>

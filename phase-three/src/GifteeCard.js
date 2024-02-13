@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
-function GifteeCard({ name, city, state, category1, category2, category3, price, handleRemoveGiftee, giftee, id }) {
+function GifteeCard({ name, city, state, category1, category2, category3, price, handleRemoveGiftee, id }) {
     const [remove, setRemove] = useState(false);
 
-    // function handleRemoveGiftee() {
-    //     setRemove((remove) => !remove)
-    // }
-
-    // console.log(giftee.id)
+    const handleRemoveClick = () => {
+        // Toggle the remove state when the button is clicked
+        setRemove(!remove);
+        // Call the handleRemoveGiftee function with the giftee id
+        handleRemoveGiftee(id);
+    };
 
     return (
         <div>
@@ -20,8 +21,9 @@ function GifteeCard({ name, city, state, category1, category2, category3, price,
                 {category3} <br />
                 {price} <br />
             </div> <br />
-            <button
-                onClick={() => handleRemoveGiftee(giftee)}>Remove</button>
+            <button onClick={handleRemoveClick}>
+                {remove ? "Undo Remove" : "Remove"}
+            </button>
         </div>
     )
 }

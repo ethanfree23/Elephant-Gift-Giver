@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm({ users }) {
@@ -24,13 +23,13 @@ function LoginForm({ users }) {
     function manageLogin(e) {
         e.preventDefault();
 
-        users.map((user) => {
-            if (user.name === userName && user.password === password) {
-                history('/home')
-            } else {
-                setStatus('rejected')
-            }
-        })
+        const foundUser = users.find(user => user.name === userName && user.password === password);
+
+        if (foundUser) {
+            history('/home');
+        } else {
+            setStatus('rejected');
+        }
     }
 
     function manageRejection() {
@@ -41,8 +40,7 @@ function LoginForm({ users }) {
 
     return (
         <div>
-            <form
-                onSubmit={manageLogin}>
+            <form onSubmit={manageLogin}>
                 <label>
                     <input 
                     placeholder="Name"
@@ -54,7 +52,7 @@ function LoginForm({ users }) {
                     <button type="submit">Log In</button>
                 </label>
             </form>
-            {status === "reject" && manageRejection()}
+            {status === "rejected" && manageRejection()}
         </div>
     )
 }
